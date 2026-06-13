@@ -11,6 +11,14 @@ app.get("/",function(req,res){                 // Creating Routing
     res.render("index");                       // using ejs Engine
 });
 
+app.get("/public/:username/", function(req,res){     // Creating Dynamic routing
+    res.send(req.params.username)
+})
+
+app.get("/public/:username/:age",function(req,res){     // Creating Dynamic Routing
+    res.send(`Welcome ${req.params.username} of age ${req.params.age}`)
+})
+
 app.listen(3000, function(){                   //Localhost 
     console.log("I am running")
 })
